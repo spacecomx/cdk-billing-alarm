@@ -1,0 +1,376 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`integration snapshot test for basic billing alarm configuation 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for billing alarm custom resource naming 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "AlarmDescription": "Alarm threshold alert for every AWS Service used in the account",
+        "AlarmName": "Billing Alarm (All Services)",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Properties": Object {
+        "DisplayName": "Billing alarm topic for monthly alarm estimates",
+        "TopicName": "BillingAlarmTopic",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for billing alarm without email address subscription to sns topic 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Type": "AWS::SNS::Topic",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for linking an aws account id to billing alarm 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "AlarmDescription": "Billing Alarm all services (Account: 123456789000)",
+        "AlarmName": "Billing Alarm All Services (Account: 123456789000)",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+          Object {
+            "Name": "LinkedAccount",
+            "Value": "123456789000",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Properties": Object {
+        "DisplayName": "Billing alarm topic for monthly alarm estimates",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for linking an aws service to billing alarm 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "AlarmDescription": "Billing Alarm for all Amazon S3 charges",
+        "AlarmName": "Billing Alarm (Amazon S3)",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+          Object {
+            "Name": "ServiceName",
+            "Value": "AmazonS3",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Properties": Object {
+        "DisplayName": "Billing alarm topic for monthly alarm estimates",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for linking aws account id and service to billing alarm 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": Object {
+        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+      },
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          Object {
+            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          },
+        ],
+        "AlarmDescription": "Billing Alarm for all Amazon S3 charges (Account: 123456789000)",
+        "AlarmName": "Billing Alarm Amazon S3 (Account: 123456789000)",
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+          Object {
+            "Name": "LinkedAccount",
+            "Value": "123456789000",
+          },
+          Object {
+            "Name": "ServiceName",
+            "Value": "AmazonS3",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+      "Properties": Object {
+        "DisplayName": "Billing alarm topic for monthly alarm estimates",
+      },
+      "Type": "AWS::SNS::Topic",
+    },
+    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": Object {
+          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        },
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;
+
+exports[`integration snapshot test for linking existing sns topic arn to billing alarm 1`] = `
+Object {
+  "Outputs": Object {
+    "BillingAlarmTopicArn5F4EC7DB": Object {
+      "Description": "Billing Alarm Topic Arn.",
+      "Value": "arn:aws:sns:us-east-1:444455556666:BillingAlarmTopic",
+    },
+  },
+  "Resources": Object {
+    "BillingAlarm990F724D": Object {
+      "Properties": Object {
+        "AlarmActions": Array [
+          "arn:aws:sns:us-east-1:444455556666:BillingAlarmTopic",
+        ],
+        "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+        "Dimensions": Array [
+          Object {
+            "Name": "Currency",
+            "Value": "USD",
+          },
+        ],
+        "EvaluationPeriods": 1,
+        "MetricName": "EstimatedCharges",
+        "Namespace": "AWS/Billing",
+        "Period": 21600,
+        "Statistic": "Maximum",
+        "Threshold": 20,
+      },
+      "Type": "AWS::CloudWatch::Alarm",
+    },
+    "BillingAlarmTopicExistingNotificationTopicjohnexampleorgB972B9AA": Object {
+      "Properties": Object {
+        "Endpoint": "john@example.org",
+        "Protocol": "email",
+        "TopicArn": "arn:aws:sns:us-east-1:444455556666:BillingAlarmTopic",
+      },
+      "Type": "AWS::SNS::Subscription",
+    },
+  },
+}
+`;

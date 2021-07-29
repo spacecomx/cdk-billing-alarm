@@ -1,8 +1,9 @@
 {
-  "name": "cdk-billing-alarm",
+  "name": "@spacecomx/cdk-billing-alarm",
+  "description": "High level CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wayne.gibson/cdk-billing-alarm.git"
+    "url": "https://github.com/spacecomx/cdk-billing-alarm.git"
   },
   "scripts": {
     "clobber": "npx projen clobber",
@@ -21,7 +22,6 @@
     "package": "npx projen package",
     "eslint": "npx projen eslint",
     "compat": "npx projen compat",
-    "publish:npm": "npx projen publish:npm",
     "docgen": "npx projen docgen",
     "release": "npx projen release",
     "projen": "npx projen"
@@ -32,38 +32,60 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.95.2",
-    "@types/jest": "*",
+    "@aws-cdk/assert": "^1.115.0",
+    "@types/jest": "^26.0.24",
     "@types/node": "^10.17.0",
-    "@typescript-eslint/eslint-plugin": "*",
-    "@typescript-eslint/parser": "*",
-    "eslint": "*",
-    "eslint-import-resolver-node": "*",
-    "eslint-import-resolver-typescript": "*",
-    "eslint-plugin-import": "*",
-    "jest": "*",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "^7.31.0",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.4",
+    "jest": "^27.0.6",
     "jest-junit": "^12",
-    "jsii": "*",
-    "jsii-diff": "*",
-    "jsii-docgen": "*",
-    "jsii-pacmak": "*",
-    "json-schema": "*",
+    "jsii": "^1.32.0",
+    "jsii-diff": "^1.32.0",
+    "jsii-docgen": "^3.2.11",
+    "jsii-pacmak": "^1.32.0",
+    "json-schema": "^0.3.0",
     "npm-check-updates": "^11",
-    "projen": "*",
+    "projen": "^0.27.12",
     "standard-version": "^9",
-    "ts-jest": "*",
-    "typescript": "*"
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-cloudwatch": "^1.115.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.115.0",
+    "@aws-cdk/aws-sns": "^1.115.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.115.0",
+    "@aws-cdk/core": "^1.115.0",
     "constructs": "^3.2.27"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aws-cdk/aws-cloudwatch": "^1.115.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.115.0",
+    "@aws-cdk/aws-sns": "^1.115.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.115.0",
+    "@aws-cdk/core": "^1.115.0"
+  },
   "bundledDependencies": [],
   "keywords": [
-    "cdk"
+    "aws",
+    "aws-billing",
+    "aws-organizations",
+    "cdk",
+    "cdk-construct",
+    "cloudwatch-alarms",
+    "sns-notifications",
+    "sns-topic",
+    "spacecomx"
   ],
   "main": "lib/index.js",
-  "license": "Apache-2.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "jest": {
     "testMatch": [

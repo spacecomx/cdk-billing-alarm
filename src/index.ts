@@ -1,5 +1,3 @@
-export class Hello {
-  public sayHello() {
-    return 'hello, world!';
-  }
-}
+export * from './aws-services';
+export * from './billing-alarm';
+export * from './billing-topic';
