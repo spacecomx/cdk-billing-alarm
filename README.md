@@ -75,6 +75,10 @@ export class BillingAlarmStack extends Stack {
 
 See [documentation](./docs/DOCUMENTATION.md) for more examples and custom implemenations.
 
+## API Documentation
+
+See [API documentation](./../API.md) for details.
+
 ## Contributions
 
 Contributions of all kinds are welcome! Check out our [contributor's guide](./CONTRIBUTING.md) and our [code of conduct](./CODE_OF_CONDUCT.md)
@@ -89,4 +93,4 @@ Contributions of all kinds are welcome! Check out our [contributor's guide](./CO
 
 ## License
 
-@spacecomx/cdk-billing-alarm is distributed under the [Apache License, Version 2.0](./LICENSE) license.
+@spacecomx/cdk-billing-alarm is distributed under the [MIT](./LICENSE) license.
