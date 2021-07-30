@@ -21,8 +21,6 @@ The CDK construct can be used to implement multiple customizable billing alarms 
 - [Post Deployment](#post-deployment)
 - [API Documentation](#api-documentation)
 
-<a name="example_1"></a>
-
 ## Prerequisites
 
 > :warning: Before you can create a billing alarm, you must enable billing alerts in your account, or the master/payer account if you are using consolidated billing. For more information, see [Enabling Billing Alerts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics).
@@ -48,6 +46,8 @@ pip install spacecomx.cdk-billing-alarm
 ```
 
 ## Usage
+
+<a name="example_1"></a>
 
 ### Create billing alarm in a single AWS account.
 
@@ -219,7 +219,7 @@ const options: BillingAlarmProps = {
 
 ### Link alarm to a specific AWS Account in master/payer account.
 
-The billing alarm can be attached to a specific linked account within an AWS Organization, master/payer or consolidate billing account. An additional configuration option `metricDimensions` is made available, to add custom metrics to the billing alarm. See [API documentation](./API.md#MetricDimensions) for details.
+The billing alarm can be attached to a specific linked account within an AWS Organization, master/payer or consolidate billing account. An additional configuration option `metricDimensions` is made available, to add custom metrics to the billing alarm. See [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md) for details.
 
 > :warning: Before you can create a billing alarm, you must enable billing alerts in your account, or the master/payer account if you are using consolidated billing. For more information, see [Enabling Billing Alerts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html#turning_on_billing_metrics).
 
@@ -315,4 +315,4 @@ If you did not receive the email, you can process a **"Request Confirmation"** f
 
 ## API Documentation
 
-See [API documentation](./../API.md) for details.
+See [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md) for details.

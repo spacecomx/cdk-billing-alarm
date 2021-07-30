@@ -1,4 +1,5 @@
-[![GitHub version](https://badge.fury.io/gh/spacecomx%2Fcdk-billing-alarm.svg)](https://badge.fury.io/gh/spacecomx%2Fcdk-billing-alarm)
+[![npm version](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm.svg)](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm)
+[![PyPI version](https://badge.fury.io/py/spacecomx.cdk-billing-alarm.svg)](https://badge.fury.io/py/spacecomx.cdk-billing-alarm)
 
 # @spacecomx/cdk-billing-alarm
 
@@ -43,7 +44,7 @@ pip install spacecomx.cdk-billing-alarm
 
 ## Setup basic billing alarm in your AWS account
 
-This type of billing alarm configuration will provide estimated charges for every AWS Service that you use, in addition to the estimated overall total of your AWS charges within your AWS account. See [documentation](./docs/DOCUMENTATION.md) for more examples and custom implementations.
+This type of billing alarm configuration will provide estimated charges for every AWS Service that you use, in addition to the estimated overall total of your AWS charges within your AWS account. See [documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md) for more examples and custom implementations.
 
 > :small_orange_diamond: The `emailAddress` is an endpoint that subscribes to a SNS topic. The `thresholdAmount` is the amount in USD, that will trigger the alarm when AWS charges exceed the threshold.
 
@@ -72,15 +73,15 @@ export class BillingAlarmStack extends Stack {
 
 ## Documentation
 
-See [documentation](./docs/DOCUMENTATION.md) for more examples and custom implemenations.
+See [documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md) for more examples and custom implemenations.
 
 ## API Documentation
 
-See [API documentation](./../API.md) for details.
+See [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md) for details.
 
 ## Contributions
 
-Contributions of all kinds are welcome! Check out our [contributor's guide](./CONTRIBUTING.md) and our [code of conduct](./CODE_OF_CONDUCT.md)
+Contributions of all kinds are welcome! Check out our [contributor's guide](https://github.com/spacecomx/cdk-billing-alarm/blob/main/CONTRIBUTING.md) and our [code of conduct](https://github.com/spacecomx/cdk-billing-alarm/blob/main/CODE_OF_CONDUCT.md)
 
 ## Credits
 
@@ -92,4 +93,4 @@ Contributions of all kinds are welcome! Check out our [contributor's guide](./CO
 
 ## License
 
-@spacecomx/cdk-billing-alarm is distributed under the [MIT](./LICENSE) license.
+@spacecomx/cdk-billing-alarm is distributed under the [MIT](https://github.com/spacecomx/cdk-billing-alarm/blob/main/LICENSE) license.
