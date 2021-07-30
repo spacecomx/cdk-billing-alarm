@@ -34,7 +34,7 @@
     "organization": false
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.115.0",
+    "@aws-cdk/assert": "^1.116.0",
     "@types/jest": "^26.0.24",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
@@ -57,19 +57,19 @@
     "typescript": "^4.3.5"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-cloudwatch": "^1.115.0",
-    "@aws-cdk/aws-cloudwatch-actions": "^1.115.0",
-    "@aws-cdk/aws-sns": "^1.115.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.115.0",
-    "@aws-cdk/core": "^1.115.0",
+    "@aws-cdk/aws-cloudwatch": "^1.116.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.116.0",
+    "@aws-cdk/aws-sns": "^1.116.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.116.0",
+    "@aws-cdk/core": "^1.116.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-cloudwatch": "^1.115.0",
-    "@aws-cdk/aws-cloudwatch-actions": "^1.115.0",
-    "@aws-cdk/aws-sns": "^1.115.0",
-    "@aws-cdk/aws-sns-subscriptions": "^1.115.0",
-    "@aws-cdk/core": "^1.115.0"
+    "@aws-cdk/aws-cloudwatch": "^1.116.0",
+    "@aws-cdk/aws-cloudwatch-actions": "^1.116.0",
+    "@aws-cdk/aws-sns": "^1.116.0",
+    "@aws-cdk/aws-sns-subscriptions": "^1.116.0",
+    "@aws-cdk/core": "^1.116.0"
   },
   "bundledDependencies": [],
   "keywords": [
