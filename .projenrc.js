@@ -7,7 +7,7 @@ const {
 
 const RELEASE_STATUS = true;
 const RELEASE_BRANCH = 'main';
-const PRE_RELEASE = 'beta';
+const PRE_RELEASE = '';
 const MAYOR_VERSION = 1;
 const RELEASE_TO_NPM = false;
 const AWS_CDK_VERSION = '1.115.0';
