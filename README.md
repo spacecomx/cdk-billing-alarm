@@ -1,3 +1,5 @@
+[![GitHub version](https://badge.fury.io/gh/spacecomx%2Fcdk-billing-alarm.svg)](https://badge.fury.io/gh/spacecomx%2Fcdk-billing-alarm)
+
 # @spacecomx/cdk-billing-alarm
 
 High level CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.
