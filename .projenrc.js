@@ -74,6 +74,6 @@ const exclude = [
 ];
 
 project.gitignore.exclude(...exclude);
-project.npmignore.exclude(...exclude, '.github');
+project.npmignore.exclude(...exclude);
 
 project.synth();
