@@ -9,7 +9,7 @@ const RELEASE_STATUS = true;
 const RELEASE_BRANCH = 'main';
 const PRE_RELEASE = '';
 const MAYOR_VERSION = 1;
-const RELEASE_TO_NPM = false;
+const RELEASE_TO_NPM = true;
 const AWS_CDK_VERSION = '1.115.0';
 const AUTOMATION_TOKEN = 'GITHUB_TOKEN';
 
@@ -52,6 +52,11 @@ const project = new AwsCdkConstructLibrary({
 
   releaseToNpm: RELEASE_TO_NPM,
   npmAccess: NpmAccess.PUBLIC,
+
+  publishToPypi: {
+    distName: 'spacecomx.cdk-billing-alarm',
+    module: 'spacecomx.cdk_billing_alarm',
+  },
 
   depsUpgrade: DependenciesUpgradeMechanism.githubWorkflow({
     workflowOptions: {
