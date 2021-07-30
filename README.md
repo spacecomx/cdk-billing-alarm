@@ -1,8 +1,5 @@
 # @spacecomx/cdk-billing-alarm
 
-[![Build status](https://github.com/spacecomx/cdk-billing-alarm/workflows/build/badge.svg)](https://github.com/spacecomx/cdk-billing-alarm/actions/)
-[![npm version](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm.svg)](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm)
-
 High level CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.
 
 The CDK construct can be used to implement multiple customizable billing alarms for single or master/payer linked AWS accounts e.g (AWS Organisations). Customizing the billing alarm gives you the capability to monitor specific AWS Service charges, by specific linked AWS account in a master/payer account.

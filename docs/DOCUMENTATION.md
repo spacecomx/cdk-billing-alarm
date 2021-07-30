@@ -41,11 +41,11 @@ or:
 yarn add @spacecomx/cdk-billing-alarm
 ```
 
-<!-- Python:
+Python:
 
 ```bash
 pip install spacecomx.cdk-billing-alarm
-``` -->
+```
 
 ## Usage
 
