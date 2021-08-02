@@ -3,9 +3,9 @@
 
 # @spacecomx/cdk-billing-alarm
 
-High level CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.
+CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes an email endpoint to an SNS Topic or an existing SNS Topic Arn.
 
-The CDK construct can be used to implement multiple customizable billing alarms for single or master/payer linked AWS accounts e.g (AWS Organisations). Customizing the billing alarm gives you the capability to monitor specific AWS Service charges, by specific linked AWS account in a master/payer account.
+The construct can be used to implement multiple customizable billing alarms for master/payer accounts e.g (AWS Organization). For customizable multi-account billing alarm requirements, see [@spacecomx/cdk-organization-billing-alarm](https://github.com/spacecomx/cdk-organization-billing-alarm)
 
 ## Features
 
@@ -15,8 +15,8 @@ Some features built-in:
 - associate the billing alarm with an existing SNS topic Arn in your AWS account.
 - consolidated charges for a specific AWS service used by your AWS account e.g. Amazon DynamoDB.
 - consolidated charges for all linked accounts within the master/payer account e.g. AWS Organization.
-- consolidated charges for a specific linked account within a master/payer account.
-- consolidated charges for a specific AWS service and linked account within the master/payer account.
+- consolidated charges for linked account within a master/payer account.
+- consolidated charges for linked account and AWS service within the master/payer account.
 
 ## Prerequisites
 
@@ -42,9 +42,9 @@ Python:
 pip install spacecomx.cdk-billing-alarm
 ```
 
-## Setup basic billing alarm in your AWS account
+## Example: Create a billing alarm in your AWS account
 
-This type of billing alarm configuration will provide estimated charges for every AWS Service that you use, in addition to the estimated overall total of your AWS charges within your AWS account. See [documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md) for more examples and custom implementations.
+This type of billing alarm configuration will provide estimated charges for every AWS Service that you use, in addition to the estimated overall total of your AWS charges within your AWS account. For more advanced examples and custom implementations, see [**documentation**](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md).
 
 > :small_orange_diamond: The `emailAddress` is an endpoint that subscribes to a SNS topic. The `thresholdAmount` is the amount in USD, that will trigger the alarm when AWS charges exceed the threshold.
 
@@ -61,7 +61,7 @@ export class BillingAlarmStack extends Stack {
         emailAddress: ['john@example.org'], // required
       },
       alarmConfiguration: {
-        alarmDescription: 'Billing alarm alert for all account AWS services',
+        alarmDescription: 'Consolidated Billing Alarm - All AWS Services',
         thresholdAmount: 150, // required
       },
     };
@@ -73,11 +73,11 @@ export class BillingAlarmStack extends Stack {
 
 ## Documentation
 
-See [documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md) for more examples and custom implemenations.
+For more advanced examples and custom implementations, see [documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/docs/DOCUMENTATION.md)
 
 ## API Documentation
 
-See [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md) for details.
+For more detail, see [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md)
 
 ## Contributions
 
@@ -89,6 +89,7 @@ Contributions of all kinds are welcome! Check out our [contributor's guide](http
 
 ## Alternatives
 
+- [@spacecomx/cdk-organization-billing-alarm](https://github.com/spacecomx/cdk-organization-billing-alarm#readme) - used for multi-account AWS Organization billing alarm requirements.
 - [aws-cdk-billing-alarm](https://github.com/alvyn279/aws-cdk-billing-alarm)
 
 ## License

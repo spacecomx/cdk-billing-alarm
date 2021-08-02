@@ -1,8 +1,8 @@
 # Documentation
 
-It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.
+CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes an email endpoint to an SNS Topic or an existing SNS Topic Arn.
 
-The CDK construct can be used to implement multiple customizable billing alarms for single or master/payer linked AWS accounts e.g (AWS Organisations). Customizing the billing alarm gives you the capability to monitor specific AWS Service charges, by linked AWS account in a master/payer account.
+The construct can be used to implement multiple customizable billing alarms for master/payer accounts e.g (AWS Organization). For customizable multi-account billing alarm requirements, see [@spacecomx/cdk-organization-billing-alarm](https://github.com/spacecomx/cdk-organization-billing-alarm)
 
 ## Table of Contents
 
@@ -10,13 +10,13 @@ The CDK construct can be used to implement multiple customizable billing alarms 
 - [Installation](#installation)
 - [Usage](#usage)
 
-  - [Create billing alarm in a single AWS account](#example_1)
-  - [Configure billing alarm with custom resource names](#example_2)
-  - [Link alarm to existing SNS Topic Arn](#example_3)
-  - [Link alarm to a specific AWS Service](#example_4)
-  - [Link alarm to a specific AWS Account in master/payer account](#example_5)
-  - [Link alarm to a specific AWS Account and AWS Service in master/payer account](#example_6)
-  - [Updating/Removing SNS topic email address endpoint subscription](#example_7)
+  - [Example 1: Create a billing alarm in a single AWS account](#example_1)
+  - [Example 2: Configure billing alarm with custom resource names](#example_2)
+  - [Example 3: Link alarm to an existing SNS Topic Arn](#example_3)
+  - [Example 4: Link alarm to a specific AWS Service](#example_4)
+  - [Example 5: Link alarm to a specific AWS Account in master/payer account](#example_5)
+  - [Example 6: Link alarm to a specific AWS Account and Service in master/payer account](#example_6)
+  - [Example 7: Updating/Removing SNS Topic email address endpoint subscription](#example_7)
 
 - [Post Deployment](#post-deployment)
 - [API Documentation](#api-documentation)
@@ -49,7 +49,7 @@ pip install spacecomx.cdk-billing-alarm
 
 <a name="example_1"></a>
 
-### Create billing alarm in a single AWS account.
+### Example 1: Create a billing alarm in a single AWS account.
 
 This type of billing alarm configuration will provide estimated charges for every AWS Service that you use, in addition to the estimated overall total of your AWS charges within your AWS account.
 
@@ -79,9 +79,9 @@ export class BillingAlarmStack extends Stack {
 
 <a name="example_2"></a>
 
-### Configure billing alarm with custom resource names.
+### Example 2: Configure billing alarm with custom resource names.
 
-The configuration options are `topicConfiguration` and `alarmConfiguration`. Importing the `BillingAlarmProps` interface will provide you with all the configuration options. See [API documentation](./../API.md) for details.
+The configuration options are `topicConfiguration` and `alarmConfiguration`. Importing the `BillingAlarmProps` interface will provide you with all the configuration options. For more detail, see [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md)
 
 > :small_orange_diamond: It is recommended that resources created by the aws-cdk, be named by the cdk itself. This will prevent resource naming conflicts with existing resources within your AWS account.
 
@@ -106,7 +106,7 @@ export class BillingAlarmStack extends Stack {
       },
       alarmConfiguration: {
         alarmName: 'Billing Alarm (All Services)', // named by aws-cdk (recommended)
-        alarmDescription: 'Billing alarm alert for all account AWS services',
+        alarmDescription: 'Consolidated Billing Alarm - All AWS Services',
         thresholdAmount: 150,
       },
     };
@@ -118,7 +118,7 @@ export class BillingAlarmStack extends Stack {
 
 <a name="example_3"></a>
 
-### Link alarm to existing SNS Topic Arn.
+### Example 3: Link alarm to an existing SNS Topic Arn.
 
 When providing an existing SNS Topic Arn e.g. `arn:aws:sns:us-east-2:444455556666:MyTopic`, **no new topic** will be created within your AWS account. Any email address provided with the `emailAddress` option, will subscribe to the existing SNS topic, within your AWS account.
 
@@ -140,7 +140,7 @@ export class BillingAlarmStack extends Stack {
       },
       alarmConfiguration: {
         alarmName: 'Billing Alarm (All Services)', // named by aws-cdk (recommended)
-        alarmDescription: 'Billing alarm alert for all account AWS services',
+        alarmDescription: 'Consolidated Billing Alarm - All AWS Services',
         thresholdAmount: 150,
       },
     };
@@ -152,7 +152,7 @@ export class BillingAlarmStack extends Stack {
 
 <a name="example_4"></a>
 
-### Link alarm to a specific AWS Account in master/payer account.
+### Example 4: Link alarm to a specific AWS Service.
 
 The billing alarm can be attached to any AWS Service used in your AWS account. This will give you fine-grain control over billing estimates for just that AWS Service. An additional configuration option `metricDimensions` is made available, to add custom metrics to the billing alarm.
 
@@ -187,11 +187,11 @@ export class BillingAlarmStack extends Stack {
       },
       alarmConfiguration: {
         alarmName: 'Billing Alarm (All Services)',
-        alarmDescription: 'Billing alarm alert for all account AWS services',
+        alarmDescription: 'Consolidated Billing Alarm - All AWS Services',
         thresholdAmount: 150,
       },
       metricDimensions: {
-        service: AWSService.AMAZON_API_GATEWAY,
+        service: AWSService.AMAZON_API_GATEWAY, // added service
       },
     };
 
@@ -217,7 +217,7 @@ const options: BillingAlarmProps = {
 
 <a name="example_5"></a>
 
-### Link alarm to a specific AWS Account in master/payer account.
+### Example 5: Link alarm to a specific AWS Account in master/payer account.
 
 The billing alarm can be attached to a specific linked account within an AWS Organization, master/payer or consolidate billing account. An additional configuration option `metricDimensions` is made available, to add custom metrics to the billing alarm. See [API documentation](https://github.com/spacecomx/cdk-billing-alarm/blob/main/API.md) for details.
 
@@ -229,14 +229,14 @@ Under the `metricDimensions` configuration option, add the `account` metric opti
 const options: BillingAlarmProps = {
   ...
   metricDimensions: {
-    account: '123456789000',
+    account: '123456789000', // added account
   },
 };
 ```
 
 <a name="example_6"></a>
 
-### Link alarm to a specific AWS Account and AWS Service in master/payer account.
+### Example 6: Link alarm to a specific AWS Account and Service in master/payer account.
 
 - it creates a new billing alarm stack within the master/payer account.
 - it creates new topic, email subscription and associates the billing alarm to the AWS linked account in the master/payer account.
@@ -262,14 +262,13 @@ export class BillingAlarmStack extends Stack {
         emailAddress: ['john@example.org'],
       },
       alarmConfiguration: {
-        alarmName: 'Billing Alarm - Amazon S3 (Account: 123456789000)',
         alarmDescription: 'Billing Alarm Amazon S3 (Account: 123456789000)',
-        numberOfHours: 6, // default is every 6 hours
+        numberOfHours: 6, // default (recommended)
         thresholdAmount: 150,
       },
       metricDimensions: {
-        account: '123456789000',
-        service: AWSService.AMAZON_S3,
+        account: '123456789000', // added service
+        service: AWSService.AMAZON_S3, // added service
       },
     };
 
@@ -280,21 +279,17 @@ export class BillingAlarmStack extends Stack {
 
 <a name="example_7"></a>
 
-### Updating/Removing SNS topic email address endpoint subscription.
+### Example 7: Updating/Removing SNS Topic email address endpoint subscription.
 
 When would you use this option?
 
-- When an existing SNS topic already has an email address endpoint subscribed to it,
+- When an existing SNS topic that already has an email address endpoint subscribed to it,
 - or you dont require any additional email address endpoints to be added to the existing topic,
 - or you want to add your own email address endpoints manually to the SNS topic (not recommended),
 - or you want to remove an email address endpoints from the SNS topic created with the package,
 - or you want to add or update email address endpoints for the SNS topic using the package.
 
-> :small_orange_diamond: To manage adding and removing endpoints for the SNS topic, use the packages `emailAddress` option. You can simply set the `emailAddress: ['john@example.org']` option to `emailAddress: []`. This will work with an SNS topic created with the package and for an existing SNS topic in your AWS account.
-
-Adding and removing endpoints means **_you will need to again confirm the subscription_** of each email address you specified with `emailAddress` option or if added manually by you e.g AWS SNS console (not recommended). See [post deployment](#post-deployment) for details.
-
-> :warning: Please be **cautious**. Without an endpoint been provided i.e. (email address been subscribed to the SNS topic), the billing alarm will still trigger when exceeding the alarm threshold. However you will **not recieve any email alarm notifications** via email.
+> :small_orange_diamond: To manage adding and removing endpoints for the SNS topic, use the packages `emailAddress` option. You can simply set the `emailAddress: ['john@example.org']` option to `emailAddress: []`. Please note that email endpoint subscriptions created manually via AWS SNS Console will not be removed by the package.
 
 ```typescript
 const options: BillingAlarmProps = {
@@ -305,9 +300,13 @@ const options: BillingAlarmProps = {
 };
 ```
 
+Adding and removing endpoints means **_you will need to again confirm the subscription_** of each email address you specified with `emailAddress` option or those manually by you e.g AWS SNS console (not recommended). See [post deployment](#post-deployment) for details.
+
+> :warning: Please be **cautious**. Without an endpoint been provided i.e. (email address been subscribed to the SNS topic), the billing alarm will still trigger when exceeding the alarm threshold. However you will **not recieve any email alarm notifications** via email.
+
 ## Post Deployment
 
-Once the billing alarm stack has been created successfully in your AWS account, you will need to confirm the subscription of each email address you specified with `emailAddress` configuration option. Clicking on the **"Confirm Subscription"** link for that email, it will automatically activate billing alarm notifications to that email address.
+Once the Billing Alarm Stack resources has been successfully created in your AWS account, you will need to confirm the subscription of each email address you specified with the `emailAddress` configuration option. Clicking on the **"Confirm Subscription"** link for that email, will automatically activate billing alarm notifications for that email address.
 
 If you did not receive the email, you can process a **"Request Confirmation"** for the subscription from the Simple Notification Service (SNS) console within your AWS account.
 
