@@ -34,6 +34,7 @@ const project = new AwsCdkConstructLibrary({
     'aws-cloudwatch',
     'cloudwatch-alarms',
     'sns',
+    'spacecomx',
   ],
   license: 'MIT',
   copyrightOwner: 'Spacecomx LLC',
