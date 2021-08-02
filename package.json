@@ -1,6 +1,6 @@
 {
   "name": "@spacecomx/cdk-billing-alarm",
-  "description": "High level CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes the endpoint to an SNS Topic or an existing SNS Topic Arn.",
+  "description": "It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes that endpoint to an SNS Topic created by the package or it can use an existing SNS Topic Arn. The CDK construct can be used to implement multiple customizable billing alarms for single or master/payer account e.g (AWS Organization).",
   "repository": {
     "type": "git",
     "url": "https://github.com/spacecomx/cdk-billing-alarm.git"
@@ -75,13 +75,15 @@
   "keywords": [
     "aws",
     "aws-billing",
+    "aws-constructs",
     "aws-organizations",
+    "billing",
+    "billing-alarm",
     "cdk",
-    "cdk-construct",
+    "cloudwatch",
     "cloudwatch-alarms",
-    "sns-notifications",
-    "sns-topic",
-    "spacecomx"
+    "constructs",
+    "sns"
   ],
   "main": "lib/index.js",
   "license": "MIT",
