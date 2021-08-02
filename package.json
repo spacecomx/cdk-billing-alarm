@@ -75,6 +75,7 @@
   "keywords": [
     "aws",
     "aws-billing",
+    "aws-cloudwatch",
     "aws-constructs",
     "aws-organizations",
     "billing",
