@@ -34,6 +34,13 @@ new BillingAlarm(scope: Construct, id: string, props: BillingAlarmProps)
 
 
 
+#### Properties <a name="Properties"></a>
+
+##### `topicArn`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingAlarm.property.topicArn"></a>
+
+- *Type:* [`@aws-cdk/core.CfnOutput`](#@aws-cdk/core.CfnOutput)
+
+---
 
 
 ### BillingTopic <a name="@spacecomx/cdk-billing-alarm.BillingTopic"></a>
