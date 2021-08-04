@@ -22,7 +22,7 @@ test('ensure resources exist to create a basic billing alarm', () => {
   expectCDK(stack).to(countResources('AWS::SNS::Subscription', 1));
   expectCDK(stack).to(
     haveResourceLike('AWS::SNS::Subscription', {
-      TopicArn: { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+      TopicArn: { Ref: 'BillingAlarmTopic524A3288' },
       Endpoint: 'john@example.org',
       Protocol: 'email',
     }),
@@ -32,7 +32,7 @@ test('ensure resources exist to create a basic billing alarm', () => {
   expectCDK(stack).to(
     haveResourceLike('AWS::CloudWatch::Alarm', {
       AlarmActions: [
-        { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+        { Ref: 'BillingAlarmTopic524A3288' },
       ],
       ComparisonOperator: 'GreaterThanOrEqualToThreshold',
       EvaluationPeriods: 1,
@@ -71,14 +71,14 @@ test('ensure resources exist to create multiple email address subscriptions asso
   expectCDK(stack).to(countResources('AWS::SNS::Subscription', 2));
   expectCDK(stack).to(
     haveResourceLike('AWS::SNS::Subscription', {
-      TopicArn: { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+      TopicArn: { Ref: 'BillingAlarmTopic524A3288' },
       Endpoint: 'john@example.org',
       Protocol: 'email',
     }),
   );
   expectCDK(stack).to(
     haveResourceLike('AWS::SNS::Subscription', {
-      TopicArn: { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+      TopicArn: { Ref: 'BillingAlarmTopic524A3288' },
       Endpoint: 'jane@example.org',
       Protocol: 'email',
     }),
@@ -88,7 +88,7 @@ test('ensure resources exist to create multiple email address subscriptions asso
   expectCDK(stack).to(
     haveResourceLike('AWS::CloudWatch::Alarm', {
       AlarmActions: [
-        { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+        { Ref: 'BillingAlarmTopic524A3288' },
       ],
       ComparisonOperator: 'GreaterThanOrEqualToThreshold',
       EvaluationPeriods: 1,
@@ -129,7 +129,7 @@ test('ensure resource do not exist when creating a billing alarm without an emai
   expectCDK(stack).to(
     haveResourceLike('AWS::CloudWatch::Alarm', {
       AlarmActions: [
-        { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+        { Ref: 'BillingAlarmTopic524A3288' },
       ],
       ComparisonOperator: 'GreaterThanOrEqualToThreshold',
       EvaluationPeriods: 1,
@@ -178,7 +178,7 @@ test('ensure resources exist to create a billing alarm with custom resource name
   expectCDK(stack).to(countResources('AWS::SNS::Subscription', 1));
   expectCDK(stack).to(
     haveResourceLike('AWS::SNS::Subscription', {
-      TopicArn: { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+      TopicArn: { Ref: 'BillingAlarmTopic524A3288' },
       Endpoint: 'john@example.org',
       Protocol: 'email',
     }),
@@ -188,7 +188,7 @@ test('ensure resources exist to create a billing alarm with custom resource name
   expectCDK(stack).to(
     haveResourceLike('AWS::CloudWatch::Alarm', {
       AlarmActions: [
-        { Ref: 'BillingAlarmTopicBillingNotificationTopic320FBC87' },
+        { Ref: 'BillingAlarmTopic524A3288' },
       ],
       AlarmDescription: 'Alarm threshold alert for every AWS Service used in the account',
       AlarmName: 'Billing Alarm (All Services)',

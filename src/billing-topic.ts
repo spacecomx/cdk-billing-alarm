@@ -79,8 +79,8 @@ export class BillingTopic extends Construct {
     const { topicName, displayName, existingTopicArn } = options;
 
     const topic = existingTopicArn
-      ? Topic.fromTopicArn(this, 'ExistingNotificationTopic', existingTopicArn)
-      : new Topic(this, 'BillingNotificationTopic', { topicName, displayName });
+      ? Topic.fromTopicArn(this, 'Topic', existingTopicArn)
+      : new Topic(this, 'Topic', { topicName, displayName });
 
     return topic;
   }

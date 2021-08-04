@@ -4,9 +4,9 @@ exports[`integration snapshot test for basic billing alarm configuation 1`] = `
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -15,7 +15,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "ComparisonOperator": "GreaterThanOrEqualToThreshold",
@@ -34,15 +34,15 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Type": "AWS::SNS::Topic",
     },
-    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",
         "TopicArn": Object {
-          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          "Ref": "BillingAlarmTopic524A3288",
         },
       },
       "Type": "AWS::SNS::Subscription",
@@ -55,9 +55,9 @@ exports[`integration snapshot test for billing alarm custom resource naming 1`] 
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -66,7 +66,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "AlarmDescription": "Alarm threshold alert for every AWS Service used in the account",
@@ -87,19 +87,19 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Properties": Object {
         "DisplayName": "Billing alarm topic for monthly alarm estimates",
         "TopicName": "BillingAlarmTopic",
       },
       "Type": "AWS::SNS::Topic",
     },
-    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",
         "TopicArn": Object {
-          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          "Ref": "BillingAlarmTopic524A3288",
         },
       },
       "Type": "AWS::SNS::Subscription",
@@ -112,9 +112,9 @@ exports[`integration snapshot test for billing alarm without email address subsc
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -123,7 +123,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "ComparisonOperator": "GreaterThanOrEqualToThreshold",
@@ -142,7 +142,7 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Type": "AWS::SNS::Topic",
     },
   },
@@ -153,9 +153,9 @@ exports[`integration snapshot test for linking an aws account id to billing alar
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -164,7 +164,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "AlarmDescription": "Billing Alarm all services (Account: 123456789000)",
@@ -189,18 +189,18 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Properties": Object {
         "DisplayName": "Billing alarm topic for monthly alarm estimates",
       },
       "Type": "AWS::SNS::Topic",
     },
-    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",
         "TopicArn": Object {
-          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          "Ref": "BillingAlarmTopic524A3288",
         },
       },
       "Type": "AWS::SNS::Subscription",
@@ -213,9 +213,9 @@ exports[`integration snapshot test for linking an aws service to billing alarm 1
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -224,7 +224,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "AlarmDescription": "Billing Alarm for all Amazon S3 charges",
@@ -249,18 +249,18 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Properties": Object {
         "DisplayName": "Billing alarm topic for monthly alarm estimates",
       },
       "Type": "AWS::SNS::Topic",
     },
-    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",
         "TopicArn": Object {
-          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          "Ref": "BillingAlarmTopic524A3288",
         },
       },
       "Type": "AWS::SNS::Subscription",
@@ -273,9 +273,9 @@ exports[`integration snapshot test for linking aws account id and service to bil
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": Object {
-        "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+        "Ref": "BillingAlarmTopic524A3288",
       },
     },
   },
@@ -284,7 +284,7 @@ Object {
       "Properties": Object {
         "AlarmActions": Array [
           Object {
-            "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+            "Ref": "BillingAlarmTopic524A3288",
           },
         ],
         "AlarmDescription": "Billing Alarm for all Amazon S3 charges (Account: 123456789000)",
@@ -313,18 +313,18 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicBillingNotificationTopic320FBC87": Object {
+    "BillingAlarmTopic524A3288": Object {
       "Properties": Object {
         "DisplayName": "Billing alarm topic for monthly alarm estimates",
       },
       "Type": "AWS::SNS::Topic",
     },
-    "BillingAlarmTopicBillingNotificationTopicjohnexampleorg87C2A282": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",
         "TopicArn": Object {
-          "Ref": "BillingAlarmTopicBillingNotificationTopic320FBC87",
+          "Ref": "BillingAlarmTopic524A3288",
         },
       },
       "Type": "AWS::SNS::Subscription",
@@ -337,7 +337,7 @@ exports[`integration snapshot test for linking existing sns topic arn to billing
 Object {
   "Outputs": Object {
     "BillingAlarmTopicArn5F4EC7DB": Object {
-      "Description": "Billing Alarm Topic Arn.",
+      "Description": "SNS Topic Arn.",
       "Value": "arn:aws:sns:us-east-1:444455556666:BillingAlarmTopic",
     },
   },
@@ -363,7 +363,7 @@ Object {
       },
       "Type": "AWS::CloudWatch::Alarm",
     },
-    "BillingAlarmTopicExistingNotificationTopicjohnexampleorgB972B9AA": Object {
+    "BillingAlarmTopicjohnexampleorg85872015": Object {
       "Properties": Object {
         "Endpoint": "john@example.org",
         "Protocol": "email",

@@ -80,6 +80,8 @@ export interface BillingAlarmProps {
  * });
  */
 export class BillingAlarm extends Construct {
+  public readonly topicArn: CfnOutput;
+
   constructor(scope: Construct, id: string, props: BillingAlarmProps) {
     super(scope, id);
 
@@ -128,9 +130,9 @@ export class BillingAlarm extends Construct {
     alarm.addAlarmAction(snsAction);
 
     // 5. Output cloudformation variables for consumption.
-    new CfnOutput(this, 'TopicArn', {
+    this.topicArn = new CfnOutput(this, 'TopicArn', {
       value: topic.topicArn,
-      description: 'Billing Alarm Topic Arn.',
+      description: 'SNS Topic Arn.',
     });
   }
 
