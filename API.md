@@ -6,7 +6,7 @@
 
 A construct to create an estimated monthly billing alarm associated with an SNS topic, and estimate billing alert notifications via email.
 
-#### Initializer <a name="@spacecomx/cdk-billing-alarm.BillingAlarm.Initializer"></a>
+#### Initializers <a name="@spacecomx/cdk-billing-alarm.BillingAlarm.Initializer"></a>
 
 ```typescript
 import { BillingAlarm } from '@spacecomx/cdk-billing-alarm'
@@ -49,7 +49,7 @@ A construct to create a new SNS topic or use an existing SNS topic Arn.
 
 It then subscribes the configured email address to the SNS topic or the existing SNS topic Arn.
 
-#### Initializer <a name="@spacecomx/cdk-billing-alarm.BillingTopic.Initializer"></a>
+#### Initializers <a name="@spacecomx/cdk-billing-alarm.BillingTopic.Initializer"></a>
 
 ```typescript
 import { BillingTopic } from '@spacecomx/cdk-billing-alarm'
