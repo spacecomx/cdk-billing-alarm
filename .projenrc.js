@@ -2,7 +2,6 @@ const {
   AwsCdkConstructLibrary,
   DependenciesUpgradeMechanism,
   NpmAccess,
-  ProjectType,
 } = require('projen');
 
 const RELEASE_STATUS = true;
@@ -38,7 +37,6 @@ const project = new AwsCdkConstructLibrary({
   ],
   license: 'MIT',
   copyrightOwner: 'Spacecomx LLC',
-  projectType: ProjectType.LIB,
 
   cdkVersion: AWS_CDK_VERSION,
   cdkDependencies: [
