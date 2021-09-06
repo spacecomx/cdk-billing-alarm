@@ -10,7 +10,7 @@ const RELEASE_BRANCH = 'main';
 const PRE_RELEASE = '';
 const MAYOR_VERSION = 1;
 const RELEASE_TO_NPM = true;
-const AWS_CDK_VERSION = '1.119.0';
+const AWS_CDK_VERSION = '1.121.0';
 const AUTOMATION_TOKEN = 'GITHUB_TOKEN';
 
 const project = new AwsCdkConstructLibrary({
