@@ -38,6 +38,10 @@ new BillingAlarm(scope: Construct, id: string, props: BillingAlarmProps)
 
 ##### `topicArn`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingAlarm.property.topicArn"></a>
 
+```typescript
+public readonly topicArn: CfnOutput;
+```
+
 - *Type:* [`@aws-cdk/core.CfnOutput`](#@aws-cdk/core.CfnOutput)
 
 ---
@@ -81,6 +85,10 @@ new BillingTopic(scope: Construct, id: string, props: BillingTopicProps)
 
 ##### `topic`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopic.property.topic"></a>
 
+```typescript
+public readonly topic: ITopic;
+```
+
 - *Type:* [`@aws-cdk/aws-sns.ITopic`](#@aws-cdk/aws-sns.ITopic)
 
 ---
@@ -100,6 +108,10 @@ const alarmOptions: AlarmOptions = { ... }
 
 ##### `thresholdAmount`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.AlarmOptions.property.thresholdAmount"></a>
 
+```typescript
+public readonly thresholdAmount: number;
+```
+
 - *Type:* `number`
 
 Enter the monthly threshold amount in USD that must be exceeded to trigger the alarm e.g. (thresholdAmount: 150).
@@ -107,6 +119,10 @@ Enter the monthly threshold amount in USD that must be exceeded to trigger the a
 ---
 
 ##### `alarmDescription`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.AlarmOptions.property.alarmDescription"></a>
+
+```typescript
+public readonly alarmDescription: string;
+```
 
 - *Type:* `string`
 - *Default:* Not configured
@@ -119,6 +135,10 @@ A developer-defined string that can be used to identify this alarm.
 
 ##### `alarmName`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.AlarmOptions.property.alarmName"></a>
 
+```typescript
+public readonly alarmName: string;
+```
+
 - *Type:* `string`
 - *Default:* Generated name
 
@@ -129,6 +149,10 @@ If you don't specify a name, AWS CloudFormation generates a unique physical ID a
 ---
 
 ##### `numberOfHours`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.AlarmOptions.property.numberOfHours"></a>
+
+```typescript
+public readonly numberOfHours: number;
+```
 
 - *Type:* `number`
 - *Default:* Duration.hours(6)
@@ -149,6 +173,10 @@ const billingAlarmProps: BillingAlarmProps = { ... }
 
 ##### `alarmConfiguration`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingAlarmProps.property.alarmConfiguration"></a>
 
+```typescript
+public readonly alarmConfiguration: AlarmOptions;
+```
+
 - *Type:* [`@spacecomx/cdk-billing-alarm.AlarmOptions`](#@spacecomx/cdk-billing-alarm.AlarmOptions)
 
 Alarm configuration options to configure the billing alarm e.g. (name, description etc.).
@@ -157,6 +185,10 @@ Alarm configuration options to configure the billing alarm e.g. (name, descripti
 
 ##### `topicConfiguration`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingAlarmProps.property.topicConfiguration"></a>
 
+```typescript
+public readonly topicConfiguration: BillingTopicProps;
+```
+
 - *Type:* [`@spacecomx/cdk-billing-alarm.BillingTopicProps`](#@spacecomx/cdk-billing-alarm.BillingTopicProps)
 
 Topic configuration options to configure the SNS topic and email address's that will be used to subscribe to the topic.
@@ -164,6 +196,10 @@ Topic configuration options to configure the SNS topic and email address's that 
 ---
 
 ##### `metricDimensions`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.BillingAlarmProps.property.metricDimensions"></a>
+
+```typescript
+public readonly metricDimensions: MetricDimensionOptions;
+```
 
 - *Type:* [`@spacecomx/cdk-billing-alarm.MetricDimensionOptions`](#@spacecomx/cdk-billing-alarm.MetricDimensionOptions)
 
@@ -183,6 +219,10 @@ const billingTopicProps: BillingTopicProps = { ... }
 
 ##### `displayName`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopicProps.property.displayName"></a>
 
+```typescript
+public readonly displayName: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured
 
@@ -194,6 +234,10 @@ A developer-defined string that can be used to identify this SNS topic.
 
 ##### `existingTopicArn`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopicProps.property.existingTopicArn"></a>
 
+```typescript
+public readonly existingTopicArn: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured
 
@@ -202,6 +246,10 @@ Use an existing SNS topic ARN e.g. ('arn:aws:sns:us-east-2:444455556666:MyTopic'
 ---
 
 ##### `topicName`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopicProps.property.topicName"></a>
+
+```typescript
+public readonly topicName: string;
+```
 
 - *Type:* `string`
 - *Default:* Generated name
@@ -214,6 +262,10 @@ If you don't specify a name, AWS CloudFormation generates a unique physical ID a
 
 ##### `emailAddress`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopicProps.property.emailAddress"></a>
 
+```typescript
+public readonly emailAddress: string[];
+```
+
 - *Type:* `string`[]
 
 The email address that will be used to subcribe to the SNS topic for billing alert notifications e.g. ['hello@example.org'] or [''hello@example.org', 'admin@example.org'].
@@ -221,6 +273,10 @@ The email address that will be used to subcribe to the SNS topic for billing ale
 ---
 
 ##### `json`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.BillingTopicProps.property.json"></a>
+
+```typescript
+public readonly json: boolean;
+```
 
 - *Type:* `boolean`
 - *Default:* false (Message text)
@@ -241,6 +297,10 @@ const metricDimensionOptions: MetricDimensionOptions = { ... }
 
 ##### `account`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.MetricDimensionOptions.property.account"></a>
 
+```typescript
+public readonly account: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured.
 
@@ -250,6 +310,10 @@ Account which this metric comes from.
 
 ##### `region`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.MetricDimensionOptions.property.region"></a>
 
+```typescript
+public readonly region: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured.
 
@@ -258,6 +322,10 @@ Region which this metric comes from.
 ---
 
 ##### `service`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.MetricDimensionOptions.property.service"></a>
+
+```typescript
+public readonly service: string;
+```
 
 - *Type:* `string`
 - *Default:* Not configured.
@@ -278,6 +346,10 @@ const subscribeOptions: SubscribeOptions = { ... }
 
 ##### `emailAddress`<sup>Required</sup> <a name="@spacecomx/cdk-billing-alarm.SubscribeOptions.property.emailAddress"></a>
 
+```typescript
+public readonly emailAddress: string[];
+```
+
 - *Type:* `string`[]
 
 The email address that will be used to subcribe to the SNS topic for billing alert notifications e.g. ['hello@example.org'] or [''hello@example.org', 'admin@example.org'].
@@ -285,6 +357,10 @@ The email address that will be used to subcribe to the SNS topic for billing ale
 ---
 
 ##### `json`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.SubscribeOptions.property.json"></a>
+
+```typescript
+public readonly json: boolean;
+```
 
 - *Type:* `boolean`
 - *Default:* false (Message text)
@@ -305,6 +381,10 @@ const topicOptions: TopicOptions = { ... }
 
 ##### `displayName`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.TopicOptions.property.displayName"></a>
 
+```typescript
+public readonly displayName: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured
 
@@ -316,6 +396,10 @@ A developer-defined string that can be used to identify this SNS topic.
 
 ##### `existingTopicArn`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.TopicOptions.property.existingTopicArn"></a>
 
+```typescript
+public readonly existingTopicArn: string;
+```
+
 - *Type:* `string`
 - *Default:* Not configured
 
@@ -324,6 +408,10 @@ Use an existing SNS topic ARN e.g. ('arn:aws:sns:us-east-2:444455556666:MyTopic'
 ---
 
 ##### `topicName`<sup>Optional</sup> <a name="@spacecomx/cdk-billing-alarm.TopicOptions.property.topicName"></a>
+
+```typescript
+public readonly topicName: string;
+```
 
 - *Type:* `string`
 - *Default:* Generated name
