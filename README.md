@@ -1,5 +1,6 @@
-[![npm version](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm.svg)](https://badge.fury.io/js/%40spacecomx%2Fcdk-billing-alarm)
-[![PyPI version](https://badge.fury.io/py/spacecomx.cdk-billing-alarm.svg)](https://badge.fury.io/py/spacecomx.cdk-billing-alarm)
+![npm peer dependency version (scoped)](https://img.shields.io/npm/dependency-version/@spacecomx/cdk-billing-alarm/peer/@aws-cdk/core?label=%40aws-cdk)
+![npm (scoped)](https://img.shields.io/npm/v/@spacecomx/cdk-billing-alarm?color=brightgreen)
+![PyPI](https://img.shields.io/pypi/v/spacecomx.cdk-billing-alarm?color=brightgreen)
 
 # @spacecomx/cdk-billing-alarm
 
