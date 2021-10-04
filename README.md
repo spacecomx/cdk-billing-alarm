@@ -4,7 +4,7 @@
 
 # @spacecomx/cdk-billing-alarm
 
-CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes an email endpoint to an SNS Topic or an existing SNS Topic Arn.
+A CDK construct to monitor estimated billing charges with alerts and notifications. It sets up an estimated monthly billing alarm associated with an email address endpoint. It then subscribes an email endpoint to an SNS Topic or an existing SNS Topic Arn.
 
 The construct can be used to implement multiple customizable billing alarms for master/payer accounts e.g (AWS Organization). For customizable multi-account billing alarm requirements, see [@spacecomx/cdk-organization-billing-alarm](https://github.com/spacecomx/cdk-organization-billing-alarm)
 
