@@ -2,7 +2,7 @@
   "dependencies": [
     {
       "name": "@aws-cdk/assert",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "build"
     },
     {
@@ -68,11 +68,6 @@
       "type": "build"
     },
     {
-      "name": "npm-check-updates",
-      "version": "^11",
-      "type": "build"
-    },
-    {
       "name": "projen",
       "type": "build"
     },
@@ -91,27 +86,27 @@
     },
     {
       "name": "@aws-cdk/aws-cloudwatch-actions",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "peer"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "peer"
     },
     {
@@ -121,27 +116,27 @@
     },
     {
       "name": "@aws-cdk/aws-cloudwatch-actions",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-cloudwatch",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns-subscriptions",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/aws-sns",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "runtime"
     },
     {
       "name": "@aws-cdk/core",
-      "version": "^1.123.0",
+      "version": "^1.125.0",
       "type": "runtime"
     }
   ],
