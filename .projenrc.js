@@ -4,7 +4,6 @@ const RELEASE_STATUS = true;
 const RELEASE_BRANCH = 'main';
 const PRE_RELEASE = '';
 const MAYOR_VERSION = 1;
-// const MIN_NODE_VERSION = '14.15.0';
 const RELEASE_TO_NPM = true;
 const AWS_CDK_VERSION = '1.125.0';
 
@@ -33,8 +32,6 @@ const project = new AwsCdkConstructLibrary({
   ],
   license: 'MIT',
   copyrightOwner: 'Spacecomx LLC',
-
-  // minNodeVersion: MIN_NODE_VERSION,
 
   cdkVersion: AWS_CDK_VERSION,
   cdkDependencies: [
