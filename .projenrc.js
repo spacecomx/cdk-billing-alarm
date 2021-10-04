@@ -4,10 +4,9 @@ const RELEASE_STATUS = true;
 const RELEASE_BRANCH = 'main';
 const PRE_RELEASE = '';
 const MAYOR_VERSION = 1;
-const MIN_NODE_VERSION = '14.15.0';
+// const MIN_NODE_VERSION = '14.15.0';
 const RELEASE_TO_NPM = true;
 const AWS_CDK_VERSION = '1.125.0';
-const AUTOMATION_TOKEN = 'GITHUB_TOKEN';
 
 const project = new AwsCdkConstructLibrary({
   name: 'cdk-billing-alarm',
@@ -35,7 +34,7 @@ const project = new AwsCdkConstructLibrary({
   license: 'MIT',
   copyrightOwner: 'Spacecomx LLC',
 
-  minNodeVersion: MIN_NODE_VERSION,
+  // minNodeVersion: MIN_NODE_VERSION,
 
   cdkVersion: AWS_CDK_VERSION,
   cdkDependencies: [
@@ -58,8 +57,11 @@ const project = new AwsCdkConstructLibrary({
     distName: 'spacecomx.cdk-billing-alarm',
     module: 'spacecomx.cdk_billing_alarm',
   },
+<<<<<<< HEAD
 
   depsUpgrade: false,
+=======
+>>>>>>> main
 });
 
 const exclude = [
